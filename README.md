@@ -2,7 +2,9 @@
 Uso de algoritmos de aprendizaje de máquina para mejorar las aplicaciones de personas a puestos de trabajo y disminuir el desempleo.
 La idea es que el usuario ingrese en un cuadro de texto su hoja de vida y en otro cuadro de texto la oferta a la cual desea aplicar.
 Allí el o los algoritmos de ML deben hacer mineria de texto entregar comentarios al usuario sobre que tan buen candidato es para ese puesto en %.
+
 Como base el programa debe de ser capaz de :
+
   1.Contar las palabras de la HV
   
   2.Encontrar la información de contacto (telefono y correo electrónico)
