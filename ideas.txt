@@ -1,0 +1,2 @@
+1. busqueda de empleos mas coincidentes con la hv del cliente
+2. graficas para mostrar la información de la hoja de vida
