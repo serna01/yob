@@ -5,8 +5,12 @@ from collections import Counter
 import re
 
 #importar el texto
-hv = open('resume_es.txt', encoding="utf8")
+    #hv de espanol
+#hv = open('resume_es.txt', encoding="utf8")
+    #hv en ingles
 #hv = open('resume.txt')
+#hv de espanol
+hv = open('resume_es_2.txt', encoding="utf8")
 hv = hv.read()
 #1 Contar las palabras de la hoja de vida
 wordcount = Counter(hv.split())
