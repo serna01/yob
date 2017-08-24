@@ -9,7 +9,7 @@ Como base el programa debe de ser capaz de :
   
   2.Encontrar la información de contacto (telefono y correo electrónico)
   
-  3.Encontrar el nivel de formación del usuario (Médico, MsC en Biotecnología, etc)
+  3.Buscar si el nombre del puesto ofrecido se encuentra literalmente o con grado alto de similitud dentro de la hoja de vida (ingeniero de software-- > ing informático, contadora pública, contador, etc)
   
   4. Encontrar Habilidades duras en la HV y la descripción de trabajo para comparar cuales estan presentes y cuales hacen falta 
     Hard skills are often skills learned through training, such as proficiency with specific software, tools, or other specialized skills.
