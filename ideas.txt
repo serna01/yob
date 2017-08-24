@@ -1,2 +1,4 @@
 1. busqueda de empleos mas coincidentes con la hv del cliente
-2. graficas para mostrar la información de la hoja de vida
+2. graficas para mostrar la informaciÃ³n de la hoja de vida
+3. Buscar nivel de ingles
+4. otros idiomas
