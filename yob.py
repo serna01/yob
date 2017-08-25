@@ -5,13 +5,13 @@ from collections import Counter
 import re
 from nltk.corpus import stopwords
 from nltk.corpus.reader.plaintext import WordPunctTokenizer
-from nltk.stem.porter import PorterStemmer
+from nltk.stem.snowball import SnowballStemmer
 from nltk.probability import FreqDist
 from collections import Counter
 #este es un comentario de Daniel
 def cleanDoc(doc):
     stopset = set(stopwords.words('spanish'))
-    stemmer = PorterStemmer()
+    stemmer = SnowballStemmer('spanishS')
     tokens = WordPunctTokenizer().tokenize(doc)
     clean = [token.lower() for token in tokens if token.lower() not in stopset and len(token) > 2]
     final = [stemmer.stem(word) for word in clean]
