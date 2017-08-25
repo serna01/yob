@@ -8,7 +8,7 @@ from nltk.corpus.reader.plaintext import WordPunctTokenizer
 from nltk.stem.porter import PorterStemmer
 from nltk.probability import FreqDist
 from collections import Counter
-
+#este es un comentario de Daniel
 def cleanDoc(doc):
     stopset = set(stopwords.words('spanish'))
     stemmer = PorterStemmer()
@@ -22,7 +22,7 @@ hv = open('resume_es.txt', encoding="utf8")
 #hv = open('resume_es_2.txt', encoding="utf8")
 
 #Empleos
-job = open('empleo_ing_meca.txt', encoding="ANSI")
+job = open('empleo_ing_geol.txt', encoding="ANSI")
 
 #--------------------------------------
 hv = hv.read()
@@ -30,13 +30,15 @@ job = job.read()
 #1 Contar las palabras de la hoja de vida
 wordcount = Counter(hv.split())
 cont = 0
+email=[]
 for item in wordcount.items():
     #imprime cada palabra y su frecuencia
-    #print("{}\t{}".format(*item))
+    print("{}\t{}".format(*item))
     cont += item[1]
     #Extraer correo electronico
     if '@' in item[0]:
-        email = item[0]
+        email.append(item[0])
+
 print('Total palabras ',cont)
 
 #2 Extraer y verificar le numero y oorreo de contacto usando ReGex (Regular expressions)
@@ -49,23 +51,24 @@ for i, item in enumerate(re.findall(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}
 
 #4 Hard skills http://graus.co/thesis/string-similarity-with-tfidf-and-python/
 test_hv = cleanDoc(hv)
-print (test_hv)
+#print (test_hv)
 counts = Counter(test_hv)
 
-dist = FreqDist(counts)
+#dist = FreqDist(counts)
 #imprime grafico de frecuencias de keywords
 #dist.plot(10)
-print ('Keywords de la HV : ', counts)
+print ('Keywords de la HV : ', counts.most_common(20))
+
 #--------------------------------------
 
 test_job = cleanDoc(job)
-print (test_job)
+#print (test_job)
 counts = Counter(test_job)
 
-dist_job = FreqDist(counts)
+#dist_job = FreqDist(counts)
 #imprime grafico de frecuencias de keywords
 #dist_job.plot(10)
-print ('Keywords de la oferta : ', counts)
+print ('Keywords de la oferta : ', counts.most_common(20))
 
 inter = set(test_hv) & set(test_job)
 #inter = hv & job
