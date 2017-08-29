@@ -2,3 +2,4 @@
 2. graficas para mostrar la información de la hoja de vida
 3. Buscar nivel de ingles
 4. otros idiomas
+5. La interseccion de las palabras en HV y oferta tengan un peso, pues no es lo mismo una palabra que salga una vez en la oferta a una que se repita por ejemplo 8 veces en la oferta
