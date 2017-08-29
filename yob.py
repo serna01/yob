@@ -99,5 +99,5 @@ puntaje_Kwds = len(inter)
 #Prueba de que funciona
 #print (cosine_sim('a little bird', 'a big dog barks'))
 fin = time.time()
-print ('Puntaje Total : {:.2f}% '.format(puntaje_hv + puntaje_Kwds/100))
+print ('Puntaje Total : {:.2f}% '.format(puntaje_hv*100 + puntaje_Kwds))
 print ('Tiempo total de ejecución : {:.4f} segundos'.format(fin-inicio))
