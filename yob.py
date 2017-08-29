@@ -84,6 +84,7 @@ inter = set(test_hv) & set(test_job)
 #print ('Cantidad de palabras comunes', len(inter))
 
 #https://stackoverflow.com/questions/8897593/similarity-between-two-text-documents
+# otros metodos a probar para buscar eficiencia https://www.linkedin.com/pulse/measuring-text-similarity-python-ravi-shankar
 vectorizer = TfidfVectorizer()
 def cosine_sim(text1, text2):
     tfidf = vectorizer.fit_transform([text1, text2])
