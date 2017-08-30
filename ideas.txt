@@ -4,3 +4,4 @@
 4. otros idiomas
 5. La interseccion de las palabras en HV y oferta tengan un peso, pues no es lo mismo una palabra que salga una vez en la oferta a una que se repita por ejemplo 8 veces en la oferta -> INCLUIDO!
 6. quitar del texto palabras que sepamos que no agregan valor y que no están en los stopwords.
+7. Hacer varios calculos con varios stemmers y entregar la mejor calificación de todas
