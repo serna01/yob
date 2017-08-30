@@ -13,7 +13,7 @@ import time
 
 inicio = time.time()
 
-#este es un comentfrom gensim import corporaario de Daniel
+
 def cleanDoc(doc):
     stopset = set(stopwords.words('spanish'))
     #stemmer = PorterStemmer('spanish')
@@ -103,37 +103,36 @@ puntaje_Kwds = len(inter)
 final = puntaje_hv*100 + puntaje_Kwds
 print ('Puntaje Total : {:.2f}% '.format(final))
 
+def exportPDF():
+    import fpdf
+    #En cmd de anaconda seguir estos pasos:
+    #git clone https://github.com/reingart/pyfpdf.git
+    #cd pyfpdf
+    #pip install fpdf.py
 
-import fpdf
-#En cmd de anaconda seguir estos pasos:
-#git clone https://github.com/reingart/pyfpdf.git
-#cd pyfpdf
-#pip install fpdf.py
-
-pdf = fpdf.FPDF(format='letter')
-pdf.add_page()
-#Aqui debe de ir nuestro logo y lema o algo asi
-pdf.image("logo.png", x=10, y=8, w=23)
-pdf.set_font("Arial", size=12)
-pdf.cell(200, 10, txt="Resumen Hoja de Vida!", ln=1, align="C")
-pdf.cell(200, 10,"Hecho por Yob", 0, 1, 'C')
-pdf.cell(0, 20,"Tu porcentaje de afinidad con este empleo es de {:.2f}%".format(final), 0, 1,)
-y = 50
-w = 10
-#descomentar para probar NOT
-#cont = cont+500
-if cont>700:
-    pdf.image("not.png", x=10, y=y, w=w)
-    pdf.cell(90, 10, txt="Tu Hoja de vida tiene {} palabras".format(cont), ln=1, align="C")
-    pdf.set_font("Arial", size=8)
-    pdf.cell(90, 10, txt="Las hojas de vida mas interesantes tiene menos de 700 palabras, trata de ser mas preciso con lo que quieres decir")
-else:
-    pdf.image("ok.png", x=10, y=y, w=10)
-    pdf.set_font("Arial", size=10)
-    pdf.cell(80, 10, txt="Tu Hoja de vida tiene {} palabras".format(cont),ln=1, align="C")
-    pdf.set_font("Arial", size=8)
-    pdf.cell(90,10 ,txt="Bien hecho! Las hojas de vida mas interesantes tiene menos de 700 palabras")
-
-pdf.output("tutorial.pdf")
-fin = time.time()
-print ('Tiempo total de ejecución : {:.4f} segundos'.format(fin-inicio))
+    pdf = fpdf.FPDF(format='letter')
+    pdf.add_page()
+    #Aqui debe de ir nuestro logo y lema o algo asi
+    pdf.image("logo.png", x=10, y=8, w=23)
+    pdf.set_font("Arial", size=12)
+    pdf.cell(200, 10, txt="Resumen Hoja de Vida!", ln=1, align="C")
+    pdf.cell(200, 10,"Hecho por Yob", 0, 1, 'C')
+    pdf.cell(0, 20,"Tu porcentaje de afinidad con este empleo es de {:.2f}%".format(final), 0, 1,)
+    y = 50
+    w = 10
+    #descomentar para probar NOT
+    #cont = cont+500
+    if cont>700:
+        pdf.image("not.png", x=10, y=y, w=w)
+        pdf.cell(90, 10, txt="Tu Hoja de vida tiene {} palabras".format(cont), ln=1, align="C")
+        pdf.set_font("Arial", size=8)
+        pdf.cell(90, 10, txt="Las hojas de vida mas interesantes tiene menos de 700 palabras, trata de ser mas preciso con lo que quieres decir")
+    else:
+        pdf.image("ok.png", x=10, y=y, w=10)
+        pdf.set_font("Arial", size=10)
+        pdf.cell(80, 10, txt="Tu Hoja de vida tiene {} palabras".format(cont),ln=1, align="C")
+        pdf.set_font("Arial", size=8)
+        pdf.cell(90,10 ,txt="Bien hecho! Las hojas de vida mas interesantes tiene menos de 700 palabras")
+        pdf.output("tutorial.pdf")
+        fin = time.time()
+        print ('Tiempo total de ejecución : {:.4f} segundos'.format(fin-inicio))
