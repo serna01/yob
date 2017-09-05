@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>HOME</title>
+  <meta name="Carros_Pre_Alpha" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link href="_/CSS/diseno.css" rel="stylesheet">
+  <script src="_/JS/saveTextAsFile.js"></script>
+
+</head>
+
+<body> 
+
+<div class="topnav" id="myTopnav">
+	  <a>YOB</a>
+	  <a href="#Planes">Planes</a>
+	  <a href="#Pro Tips">Pro Tips</a>
+	  <a href="#Contacto">Contacto</a>
+</div>
+
+<div class="w3-row-padding">
+
+	<div class="w3-half">
+	  <h2>Tu Perfil</h2>
+	  <textarea id="textArea1" class="textArea" rows="10" placeholder="Pega aqui tu hoja de vida"></textarea>
+	</div>
+
+
+	<div class="w3-half">
+	  <h2>Tu trabajo soñado</h2>
+	  <textarea id="textArea" class="textArea" rows="10" placeholder="Pega aqui el perfil de empleo, sin la descripción de la empresa"></textarea>
+	</div>
+
+</div>
+
+<div style="text-align:center;">
+	<a href="procesado.html">
+    	<button type="button" class="button" value="save" id="save" onclick="saveTextAsFile()">Escanear!</button>
+    </a>
+</div>
+
+</body>
+</html>
