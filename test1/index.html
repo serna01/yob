@@ -21,16 +21,23 @@
 
 <div class="w3-row-padding">
 
-	<div class="w3-half">
-	  <h2>Tu Perfil</h2>
-	  <textarea id="textArea1" class="textArea" rows="10" placeholder="Pega aqui tu hoja de vida"></textarea>
-	</div>
+	<form action="welcome.php" method="post">
+		<div class="w3-half">
+	  		<h2>Tu Perfil</h2>
+	  		<textarea id="textArea1" class="textArea" rows="10" name="hv" placeholder="Pega aqui tu hoja de vida"></textarea>
+			
+		</div>
 
+		<div class="w3-half">
+	  		<h2>Tu trabajo soñado</h2>
+	  		<textarea id="textArea" style="margin: 1%;" class="textArea" rows="10" name="oferta" placeholder="Pega aqui el perfil de empleo, sin la descripción de la empresa"></textarea>
+		</div>
 
-	<div class="w3-half">
-	  <h2>Tu trabajo soñado</h2>
-	  <textarea id="textArea" class="textArea" rows="10" placeholder="Pega aqui el perfil de empleo, sin la descripción de la empresa"></textarea>
-	</div>
+		<div style="text-align:center;">
+			<input type="submit" class="button" value="Escanear">
+		</div>
+	</form>
+
 
 </div>
 

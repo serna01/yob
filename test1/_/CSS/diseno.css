@@ -1,24 +1,22 @@
 #textArea {
   display: block;
   width: 100%;
+  margin: 5%;
 }
 #textArea1 {
   display: block;
   width: 100%;
+  margin: 5%;
 }
 
-.button {
-    background-color: #4CAF50; /* Green */
+.buttons {
+
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 10%;
 }
-
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;
