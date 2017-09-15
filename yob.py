@@ -112,14 +112,10 @@ def palabrasComunesStemmer(texto,n):
             if i[0] in j[:len(i[0])]:
                 final[j]=i[1]
                 break
-    return final 
+    return final
 
-if __name__ == '__main__':
-    #0: importar HV y descripción del empleo:
-    hv = open('resume_es.txt', encoding="utf8")
-    job = open('empleo_ing_geol.txt', encoding="ANSI")
-    hv = hv.read()
-    job = job.read()
+
+def yobFunct(hv,job):
     calificacion=0
 
     #1: contar # de palabras de la HV:
@@ -136,22 +132,29 @@ if __name__ == '__main__':
     #3: Entregar un puntaje de acuerdo a los parámetros de similitud del texto:
     calificacion=calcularCalificacion(hv,job)
 
-    print('CALIFICACIÓN DE AFINIDAD:',calificacion)
-
+    #print('CALIFICACIÓN DE AFINIDAD:',calificacion)
     #PUEDE SER!!! 4: Entregar N palabras más comunes de cada texto sin stopwords pero sin aplicar stemmer para hacer histograma en HTML:
     n=15
-    most_common_HV=palabrasComunesNoStemmer(hv,n)
-    most_common_Job=palabrasComunesNoStemmer(job,n)
+    #most_common_HV=palabrasComunesNoStemmer(hv,n)
+    #most_common_Job=palabrasComunesNoStemmer(job,n)
     # Tambien puede ser que se aplique el stemmer y buscar la "palabra completa", y poner como "palabras relacionadas con: ej. geología"
     most_common_HV=palabrasComunesStemmer(hv,n)
     most_common_Job = palabrasComunesStemmer(job,n)
-    print('persona',most_common_HV)
-    print('trabajo',most_common_Job)
-
+    #print('persona',most_common_HV)
+    #print('trabajo',most_common_Job)
     #5: exportar informe en PDF
     #exportPDF()
-
-
     fin = time.time()
-    print('TIEMPO DE EJECUCIÓN:',fin-inicio)
+    #print('TIEMPO DE EJECUCIÓN:',fin-inicio)
+    return(calificacion,most_common_HV,most_common_Job)
+
+if __name__ == '__main__':
+    #0: importar HV y descripción del empleo:
+    hv = open('resume_es.txt', encoding="utf8")
+    job = open('empleo_ing_geol.txt', encoding="ANSI")
+    hv = hv.read()
+    job = job.read()
+    result=yobFunct(hv,job)
+    print(result[0],result[1],result[2])
+
 
