@@ -89,6 +89,10 @@ def calcularCalificacion(hv,job):
 
     # dar 2 puntos por cada palabra comun en los top 10 de cada texto:
     puntaje_hv += getIntersecTopN(0, 10, test_hv, test_job)*2
+    
+    # limitar el puntaje al 100%:
+    if (puntaje_hv>100):
+        puntaje_hv=100
 
     return puntaje_hv
 
@@ -146,7 +150,7 @@ def yobFunct(hv,job):
     #exportPDF()
     fin = time.time()
     #print('TIEMPO DE EJECUCIÓN:',fin-inicio)
-    return(calificacion,most_common_HV,most_common_Job)
+    return(calificacion,most_common_HV,most_common_Job,numPalabrass)
 
 if __name__ == '__main__':
     #0: importar HV y descripción del empleo:
