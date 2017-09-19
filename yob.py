@@ -70,6 +70,38 @@ def extraerDatosGenerales(hv):
         tel.append(item)
     return email,tel
 
+def coeficienteEstudios(hv,job):
+    hv=hv.lower()
+    job=job.lower()
+
+    coefjob=1
+    coefhv=1
+    if 'doctorado'in hv or 'phd' in hv or 'doctor' in hv:
+        coefhv=4
+    elif 'maestría' in hv or 'magíster' in hv or 'msc' in hv:
+        coefhv=3
+    elif 'especialización' in hv or 'especialista' in hv:
+        coefhv=2
+    else:
+        coefhv=1
+
+    if 'doctorado'in job or 'phd' in job or 'doctor' in job:
+        coefjob = 4
+    elif 'maestría' in job or 'magíster' in job or 'msc' in job:
+        coefjob = 3
+    elif 'especialización' in job or 'especialista' in job:
+        coefjob = 2
+    else:
+        coefjob = 1
+
+    if coefjob<coefhv:
+        result=1.2
+    else:
+        result=coefhv/coefjob
+
+    return result
+
+
 def calcularCalificacion(hv,job):
     #comparación de textos planos:
     puntaje_hv = cosine_sim(hv, job)*100
@@ -89,7 +121,10 @@ def calcularCalificacion(hv,job):
 
     # dar 2 puntos por cada palabra comun en los top 10 de cada texto:
     puntaje_hv += getIntersecTopN(0, 10, test_hv, test_job)*2
-    
+
+    #multiplicar por el coeficiente de estudios
+    puntaje_hv*=coeficienteEstudios(hv,job)
+
     # limitar el puntaje al 100%:
     if (puntaje_hv>100):
         puntaje_hv=100
@@ -150,12 +185,12 @@ def yobFunct(hv,job):
     #exportPDF()
     fin = time.time()
     #print('TIEMPO DE EJECUCIÓN:',fin-inicio)
-    return(calificacion,most_common_HV,most_common_Job,numPalabrass)
+    return(calificacion,most_common_HV,most_common_Job,numPalabras)
 
 if __name__ == '__main__':
     #0: importar HV y descripción del empleo:
-    hv = open('resume_es.txt', encoding="utf8")
-    job = open('empleo_ing_geol.txt', encoding="ANSI")
+    hv = open('daniel.txt', encoding="ANSI")
+    job = open('uni.txt', encoding="ANSI")
     hv = hv.read()
     job = job.read()
     result=yobFunct(hv,job)
