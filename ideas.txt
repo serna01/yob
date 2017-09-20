@@ -8,3 +8,7 @@
 8. Generar un resumen de la hoja de vida y un resumen de la oferta de empleo
 9. Buscador del nombre
 10. Predecir areas de interés
+
+
+Para la página:
+1. Debería mostrar las razones por las que el puntaje dio bajito
