@@ -12,3 +12,4 @@
 
 Para la página:
 1. Debería mostrar las razones por las que el puntaje dio bajito, hacer una "explosión" de la calificación y dar propuestas de mejora
+2. Hacer sentiment analysis de las hojas de vida de las personas
