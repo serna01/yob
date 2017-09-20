@@ -11,4 +11,4 @@
 
 
 Para la página:
-1. Debería mostrar las razones por las que el puntaje dio bajito
+1. Debería mostrar las razones por las que el puntaje dio bajito, hacer una "explosión" de la calificación y dar propuestas de mejora
