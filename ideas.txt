@@ -9,6 +9,8 @@
 9. Buscador del nombre --> Se saca de la BD
 10. Predecir areas de interés
 11. Usar TF-IDF
+12. Topic modelling
+
 
 
 Para la página:
