@@ -9,7 +9,13 @@
 9. Buscador del nombre --> Se saca de la BD
 10. Predecir areas de interés
 11. Usar TF-IDF
-12. Topic modelling
+12. Topic modelling (algorithms used to discover the topics that are present in a corpus) - Que industria encaja mejor
+13. Action verbs - Buscar verbos que resalten en la HV
+14. Recomendación de headline- al mejor estilo de linkedin
+15. Cultura organizacional - para empresas. ver que tan bien encaja el perfil con X palabras que definen la cultura organizacional de la empresa
+16. Buscar caracteristicas personales
+17. Palabras cliché con/sin hechos que respalden la afirmacion. consejos
+18. Correción ortográfica
 
 
 
